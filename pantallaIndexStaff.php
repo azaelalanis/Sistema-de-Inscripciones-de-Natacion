@@ -36,7 +36,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand">Tec Deportes</a>
+      <a href="pantallaMenuStaff.php" class="navbar-brand">Tec Deportes</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
@@ -52,12 +52,6 @@
       </ul>
     </div>
   </div>
-
-	<div class="container">
-		<div class="jumbotron">
-			<h1>Bienvenido</h1>
-			<p>Usted a ingresado al sistema como staff.</p>
-		</div>
 
   <div class="container">
 
