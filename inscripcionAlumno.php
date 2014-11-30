@@ -69,7 +69,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Reporte</title>
+		<title>Inscripci&oacute;n</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/bootstrap.css" media="screen">
 		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -121,7 +121,7 @@
 		<p class="lead" align="center">La inscripci&oacute;n se registrar&aacute; con los siguientes datos.</p>
 		<!-- Codigo de la forma -->
 		<div class="container">
-			<form id ="formReg" form class="form-horizontal" action="pantallaIndexStaff.php" method="post">
+			<form id ="formReg" form class="form-horizontal" action="inscripcionFinalizada.php" method="post">
 				<fieldset>
 					<legend>Clases de Natación</legend>
 					<!-- Nombre completo del alumno -->
@@ -218,8 +218,8 @@
 						</div>
 					</div>
 					<!-- Form -->
-					<input type='hidden' name='idCurso' value='$idCurso'/>
-					<input type='hidden' name='idAlumno' value='$idAlumno'/>
+					<input type='hidden' name='idCurso' value='<?=$idCurso?>'/>
+					<input type='hidden' name='idAlumno' value='<?=$idAlumno?>'/>
 					<div class="form-group">
 						<label class="col-lg-2 control-label">Forma de pago</label>
 						<div class="col-lg-10">
