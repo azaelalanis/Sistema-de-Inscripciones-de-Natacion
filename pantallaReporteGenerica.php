@@ -45,6 +45,10 @@ include_once "./Classes/PHPExcel.php"
         <h4 class="list-group-item-heading">Cursos</h4>
         <p class="list-group-item-text">Reporte con información sobre todos los cursos registrados.</p>
       </a>
+      <a href="reporteNomina.php" class="list-group-item">
+        <h4 class="list-group-item-heading">Pagos por Nómina</h4>
+        <p class="list-group-item-text">Reporte con información sobre todos los alumnos que pagarán por nómina.</p>
+      </a>
     </div>
     <hr>
     <footer>
