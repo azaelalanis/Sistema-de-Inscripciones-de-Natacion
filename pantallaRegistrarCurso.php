@@ -4,8 +4,7 @@ include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
 $idAlumno= isset($_GET["idAlumno"]) ? $_GET['idAlumno'] : -1;
-$bloqueMin= isset($_GET["bloqueMin"]) ? $_GET['bloqueMin'] : -1;
-$bloqueMax= isset($_GET["bloqueMax"]) ? $_GET['bloqueMax'] : -1;
+$bloque= isset($_GET["bloque"]) ? $_GET['bloque'] : -1;
 $query="select FechaNacimiento from alumno where idAlumno='$idAlumno'";
 $result = mysql_query($query);
 $row = mysql_fetch_array($result);
@@ -23,7 +22,7 @@ $sql="select
         CanMaestros,
         Precio
       from
-        curso  where bloque>=$bloqueMin and bloque<=$bloqueMax and edadminima<= $diff and edadmaxima>= $diff and idCurso not in (
+        curso  where bloque=$bloque and edadminima<= $diff and edadmaxima>= $diff and idCurso not in (
           SELECT ins.IDCURSO FROM inscripcion ins WHERE ins.idAlumno = $idAlumno AND ins.IDCURSO = IDCURSO)";
 
   $result = mysql_query($sql);
@@ -59,10 +58,10 @@ $sql="select
 
   <div class="container">
     <div align="center">
-      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=1&bloqueMax=3"><button class='btn btn-primary btn-xs' >1-3</button></a>
-      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=4&bloqueMax=6"><button class='btn btn-primary btn-xs' >4-6</button></a>
-      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=7&bloqueMax=9"><button class='btn btn-primary btn-xs' >7-9</button></a>
-      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=10&bloqueMax=12"><button class='btn btn-primary btn-xs' >10-12</button></a>
+      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloque=1"><button class='btn btn-primary btn-xs' >Bloque 1</button></a>
+      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloque=2"><button class='btn btn-primary btn-xs' >Bloque 2</button></a>
+      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloque=3"><button class='btn btn-primary btn-xs' >Bloque 3</button></a>
+      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloque=4"><button class='btn btn-primary btn-xs' >Bloque 4</button></a>
      </div>
 	<table class="table table-striped table-hover ">
       <thead>
