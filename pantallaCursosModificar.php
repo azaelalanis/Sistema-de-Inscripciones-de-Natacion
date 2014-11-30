@@ -228,10 +228,18 @@
     </div>
 
 
-    <div class="form-group">
-      <label for="bloque" class="col-lg-2 control-label">bloque</label>
+       <div class="form-group">
+      <label for="bloque" class="col-lg-2 control-label">Bloque</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="bloque" name = "bloque" value="<?=$bloque?>" required>
+        <select id="bloque" name= "bloque">
+    <?php
+      for($i = 1; $i <= 4; $i++){
+          echo "<option class='form-control' value='$i' ";
+          if($bloque == $i) echo "selected";
+          echo ">$i</option>";
+      }    
+    ?>
+      </select>
       </div>
     </div>
     <!-- Botones de submit -->
