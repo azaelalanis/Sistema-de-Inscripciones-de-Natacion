@@ -1,8 +1,8 @@
 <?php
 	include "./includes/conexion.php";
 	include "./includes/sesionStaff.php";
-	
-	$sql="select 
+
+	$sql="select
 			idAlumno,
 			CURP,
 			Nombre,
@@ -14,9 +14,9 @@
 	if(isset($_POST["buscar"])){
 		$buscar = $_POST["buscar"];
 		$sql = $sql . " where Nombre like '%$buscar%'";
-	}	
+	}
 	$result = mysql_query($sql);
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -46,15 +46,21 @@
         </form>
         <li><a href="pantallaRegistroAlumno.php">Agregar nuevo alumno</a></li>
       </ul>
-      
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="cerrarSesion.php">Cerrar sesión</a></li>
       </ul>
     </div>
   </div>
 
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Bienvenido</h1>
+			<p>Usted a ingresado al sistema como staff.</p>
+		</div>
+
   <div class="container">
-    
+
     <table class="table table-striped table-hover ">
       <thead>
         <tr>
@@ -69,14 +75,14 @@
         </thead>
         <tbody>
 <?php
-	
+
 		while($row = mysql_fetch_array($result)){
 			$idAlumno=$row['idAlumno'];
 			$CURP=$row['CURP'];
 			$Nombre=$row['Nombre'];
 			$Telefono=$row['Telefono'];
 			$email=$row['email'];
-    
+
 
 
 			echo "	<tr id=\"". $idAlumno ."\">
@@ -88,11 +94,11 @@
 						<td><a href='pantallaRegistrarCurso.php?idAlumno=$idAlumno&bloqueMin=1&bloqueMax=3' class='btn btn-primary btn-xs'>Inscribir a curso</a></td>
 						<td><a href='bajaAlumno.php?curp=$CURP' class='btn btn-primary btn-xs'>Baja</a></td>
 					</tr>";
-		}	
+		}
 ?>
 
         </tbody>
-      </table> 
+      </table>
 
 
       <hr>
