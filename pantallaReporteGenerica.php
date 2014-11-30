@@ -53,6 +53,14 @@ include_once "./Classes/PHPExcel.php"
         <h4 class="list-group-item-heading">Pagos por Nómina</h4>
         <p class="list-group-item-text">Reporte con información sobre todos los alumnos que pagarán por nómina.</p>
       </a>
+      <a href="reportePagado.php" class="list-group-item">
+        <h4 class="list-group-item-heading">Alumnos que ya realizaron sus pagos</h4>
+        <p class="list-group-item-text">Reporte con información sobre los alumnos que ya pagaron sus cursos.</p>
+      </a>
+      <a href="reporteNoPagado.php" class="list-group-item">
+        <h4 class="list-group-item-heading">Alumnos que no han realizado sus pagos</h4>
+        <p class="list-group-item-text">Reporte con información sobre los alumnos que no han pagado sus cursos.</p>
+      </a>
       <a href="reporteDisponibilidad.php" class="list-group-item">
         <h4 class="list-group-item-heading">Disponibilidad de Cursos</h4>
         <p class="list-group-item-text">Reporte con información sobre los cursos con espacios disponibles en tiempo real.</p>
