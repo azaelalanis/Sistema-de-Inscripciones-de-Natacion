@@ -62,7 +62,7 @@ $sql="select
       <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=1&bloqueMax=3"><button class='btn btn-primary btn-xs' >1-3</button></a>
       <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=4&bloqueMax=6"><button class='btn btn-primary btn-xs' >4-6</button></a>
       <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=7&bloqueMax=9"><button class='btn btn-primary btn-xs' >7-9</button></a>
-      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=1&bloqueMax=12"><button class='btn btn-primary btn-xs' >10-12</button></a>
+      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=10&bloqueMax=12"><button class='btn btn-primary btn-xs' >10-12</button></a>
      </div>
 	<table class="table table-striped table-hover ">
       <thead>
