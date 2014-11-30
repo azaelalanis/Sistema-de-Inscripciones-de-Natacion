@@ -85,7 +85,7 @@
 						<td>$Nombre</td>
 						<td>$Telefono</td>
 						<td>$email</td>
-						<td><a href='pantallaRegistrarCurso.php?idAlumno=$idAlumno' class='btn btn-primary btn-xs'>Inscribir a curso</a></td>
+						<td><a href='pantallaRegistrarCurso.php?idAlumno=$idAlumno&bloqueMin=1&bloqueMax=3' class='btn btn-primary btn-xs'>Inscribir a curso</a></td>
 						<td><a href='bajaAlumno.php?curp=$CURP' class='btn btn-primary btn-xs'>Baja</a></td>
 					</tr>";
 		}	

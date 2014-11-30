@@ -4,6 +4,8 @@ include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
 $idAlumno= isset($_GET["idAlumno"]) ? $_GET['idAlumno'] : -1;
+$bloqueMin= isset($_GET["bloqueMin"]) ? $_GET['bloqueMin'] : -1;
+$bloqueMax= isset($_GET["bloqueMax"]) ? $_GET['bloqueMax'] : -1;
 $query="select FechaNacimiento from alumno where idAlumno='$idAlumno'";
 $result = mysql_query($query);
 $row = mysql_fetch_array($result);
@@ -11,7 +13,6 @@ $FechaNacimiento=$row['FechaNacimiento'];
 $now = new DateTime();
 $fecha = new DateTime($FechaNacimiento);
 $diff = abs($now->format("Y") - $fecha->format("Y"));
-
 $sql="select 
         idCurso,
         Nombre,
@@ -22,7 +23,8 @@ $sql="select
         CanMaestros,
         Precio
       from
-        curso  where edadminima<= $diff and edadmaxima>= $diff";
+        curso  where bloque>=$bloqueMin and bloque<=$bloqueMax and edadminima<= $diff and edadmaxima>= $diff and idCurso not in (
+          SELECT ins.IDCURSO FROM inscripcion ins WHERE ins.idAlumno = $idAlumno AND ins.IDCURSO = IDCURSO)";
 
   $result = mysql_query($sql);
 
@@ -56,7 +58,12 @@ $sql="select
   </div>
 
   <div class="container">
-    
+    <div align="center">
+      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=1&bloqueMax=3"><button class='btn btn-primary btn-xs' >1-3</button></a>
+      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=4&bloqueMax=6"><button class='btn btn-primary btn-xs' >4-6</button></a>
+      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=7&bloqueMax=9"><button class='btn btn-primary btn-xs' >7-9</button></a>
+      <a href="pantallaRegistrarCurso.php?idAlumno=<?php echo $idAlumno;?>&bloqueMin=1&bloqueMax=12"><button class='btn btn-primary btn-xs' >10-12</button></a>
+     </div>
 	<table class="table table-striped table-hover ">
       <thead>
         <tr>
