@@ -41,7 +41,7 @@
         $_SESSION['nombre']=$nombre;
 		if($tipo){
 			echo "<script language=\"javascript\">
-					window.location.href = \"pantallaIndexStaff.php\"
+					window.location.href = \"pantallaMenuStaff.php\"
 				</script>";
 		}else{
 			echo "<script language=\"javascript\">
