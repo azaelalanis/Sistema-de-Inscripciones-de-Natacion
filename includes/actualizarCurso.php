@@ -15,6 +15,7 @@
 		$edadMax		=	$_POST['edadMax']; 
 		$diaDeLaSemana	=	implode(',', $_POST['diaDeLaSemana']);
 		$idCurso		=	$_POST['idCurso'];
+		$bloque     	=   $_POST['bloque'];
 		$diaDeLaSemana = " ".$diaDeLaSemana;
 		$precio			=	$_POST['precioCurso'];
 		$sql = "update curso 
@@ -27,7 +28,8 @@
 						Duracion = $duracion,
 						DiasDeLaSemana = '$diaDeLaSemana',
 						CanMaestros = $numMaestros,
-						Precio = $precio
+						Precio = $precio,
+						bloque = $bloque
 					where
 						idCurso = $idCurso";
 

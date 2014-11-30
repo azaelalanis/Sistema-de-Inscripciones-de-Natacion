@@ -18,7 +18,8 @@
 				HoraInicio,
 				EdadMinima,
 				EdadMaxima,
-        Precio
+        Precio,
+        BLOQUE
 			from
 				curso
 			where idCurso = $idCurso";
@@ -35,6 +36,7 @@
 		$EdadMinima = $row['EdadMinima'];
 		$EdadMaxima = $row['EdadMaxima'];
 		$Precio = $row['Precio'];
+    $bloque = $row['BLOQUE'];
 	}	
 	$horas = explode(":", $HoraInicio);
 	$hora = $horas[0]; 
@@ -224,7 +226,14 @@
         <input type="number" min="0.00" step="50.00" max="2500" class="form-control" id="precioCurso" name = "precioCurso" value="<?=$Precio?>">
       </div>
     </div>
-    
+
+
+    <div class="form-group">
+      <label for="bloque" class="col-lg-2 control-label">bloque</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="bloque" name = "bloque" value="<?=$bloque?>" required>
+      </div>
+    </div>
     <!-- Botones de submit -->
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">

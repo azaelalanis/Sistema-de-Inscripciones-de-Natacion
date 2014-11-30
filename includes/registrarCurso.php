@@ -12,13 +12,14 @@
 		$tiempoInicio       =              $horaInicio.':'.$minutoInicio;    
 		$cupo               =              $_POST['cupo'];
 		$edadMin            =              $_POST['edadMin'];
-		$edadMax            =              $_POST['edadMax']; 
+		$edadMax            =              $_POST['edadMax'];
+		$bloque             =              $_POST['bloque'];
 		$diaDeLaSemana      =              implode(',', $_POST['diaDeLaSemana']);
 		$diaDeLaSemana = " ".$diaDeLaSemana;
 		$precio				=			   $_POST['precioCurso'];
-		$sql = "INSERT INTO curso (Nombre, Cupo, EdadMinima, EdadMaxima, HoraInicio, Duracion, DiasDeLaSemana, CanMaestros, Precio)
+		$sql = "INSERT INTO curso (Nombre, Cupo, EdadMinima, EdadMaxima, HoraInicio, Duracion, DiasDeLaSemana, CanMaestros, Precio, BLOQUE)
 					VALUES
-					('$nombre', '$cupo', '$edadMin', '$edadMax', '$tiempoInicio', '$duracion', '$diaDeLaSemana', '$numMaestros', '$precio')";
+					('$nombre', '$cupo', '$edadMin', '$edadMax', '$tiempoInicio', '$duracion', '$diaDeLaSemana', '$numMaestros', '$precio', $bloque)";
 
 		mysql_real_escape_string($sql);
 		$result = mysql_query($sql);	

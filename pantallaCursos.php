@@ -228,7 +228,13 @@
         <input type="text" min="0.00" step="50.00" max="2500" class="form-control" id="precioCurso" name = "precioCurso" placeholder="$">
       </div>
     </div>
-    
+
+    <div class="form-group">
+      <label for="bloque" class="col-lg-2 control-label">bloque</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="bloque" name = "bloque" placeholder="bloque" required>
+      </div>
+    </div>
     <!-- Botones de submit -->
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
