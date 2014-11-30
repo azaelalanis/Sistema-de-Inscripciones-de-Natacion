@@ -1,5 +1,5 @@
 <?php
-	$conexion = mysql_connect('localhost', 'root', '');
+	$conexion = mysql_connect('localhost', 'root', 'root');
 	mysql_set_charset('utf8', $conexion);
 	if (!$conexion) {
 		die('No pudo conectarse: ' . mysql_error());
