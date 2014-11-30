@@ -46,7 +46,7 @@ if ($result = mysql_query($query) or die(mysql_error())) {
   $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
 
   header('Content-Type: application/vnd.ms-excel');
-  header('Content-Disposition: attachment;filename="reporteDisponibilidad.xls"');
+  header('Content-Disposition: attachment;filename="reporteAlumnoCurso.xls"');
   header('Cache-Control: max-age=0');
 
   $objWriter->save('php://output');
