@@ -1,12 +1,6 @@
 <?php
 // connection with the database
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "root";
-$dbname = "natacion";
-
-mysql_connect($dbhost,$dbuser,$dbpass);
-mysql_select_db($dbname);
+include "./includes/conexion.php";
 
 // require the PHPExcel file
 require './Classes/PHPExcel.php';
