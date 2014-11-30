@@ -151,6 +151,16 @@ MODIFY `IdAlumno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 ALTER TABLE `curso`
 MODIFY `IdCurso` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+
+ALTER TABLE curso
+ADD bloque INT(11);
+
+ALTER TABLE inscripcion
+ADD fechaDeInscripcion DATETIME;
+
+ALTER TABLE inscripcion
+ADD pagada BOOLEAN;
+
 --
 -- AUTO_INCREMENT for table `inscripcion`
 --
