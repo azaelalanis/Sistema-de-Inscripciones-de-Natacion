@@ -19,7 +19,7 @@ $headings = array('Nomina', 'Nombre del Alumno','CURP', 'Fecha de Nacimiento', '
 if ($result = mysql_query($query) or die(mysql_error())) {
   // Create a new PHPExcel object
   $objPHPExcel = new PHPExcel();
-  $objPHPExcel->getActiveSheet()->setTitle('Lista de pagos por nomina');
+  $objPHPExcel->getActiveSheet()->setTitle('Lista de cursos disponibles');
 
   $rowNumber = 1;
   $col = 'A';
@@ -46,7 +46,7 @@ if ($result = mysql_query($query) or die(mysql_error())) {
   $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
 
   header('Content-Type: application/vnd.ms-excel');
-  header('Content-Disposition: attachment;filename="reporteNomina.xls"');
+  header('Content-Disposition: attachment;filename="reporteDisponibilidad.xls"');
   header('Cache-Control: max-age=0');
 
   $objWriter->save('php://output');
