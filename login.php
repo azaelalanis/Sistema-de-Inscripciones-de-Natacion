@@ -1,26 +1,26 @@
 <?php
 
 	include "./includes/conexion.php";
-	
+
 	//Variables inicializadas
 	if(isset($_POST["login"])){
 		$usuario=$_POST["login"];
 	}else{
 		$usuario="";
 	}
-	
+
 	if(isset($_POST["password"])){
 		$clave=$_POST["password"];
 	}else{
 		$clave="";
 	}
-	
+
 	$password="";
 	$tipo="";
 	$nombre="";
-	
-	
-		
+
+
+
 	$sql="select * from usuario where Nomina='".$usuario."'";
 
 	$result = mysql_query($sql);
@@ -28,9 +28,9 @@
 		$tipo=$row['Tipo'];
 		$password=$row['Password'];
 		$nombre=$row['Nombre'];
-	}	
+	}
 
-	
+
 	//Si la clave ingresada es igual a la de la base de datos deja ingresar
 	if($clave==$password && $usuario!="")
 	{

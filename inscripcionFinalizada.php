@@ -7,7 +7,9 @@ $idAlumno= isset($_POST["idAlumno"]) ? $_POST['idAlumno'] : -1;
 $idCurso= isset($_POST["idCurso"]) ? $_POST['idCurso'] : -1;
 
 $formaDePago = isset($_POST["formaDePago"]) ? $_POST['formaDePago']: -1;
-$nomina = isset($_POST["nominaEmpleado"]) ? $_POST['nominaEmpleado']: "";
+//$nomina = isset($_POST["nominaEmpleado"]) ? $_POST['nominaEmpleado']: "";
+$nomina = isset($_SESSION["nomina"]) ? $_SESSION['nomina']: "";
+
 
 if($idCurso != -1){
 	$sql= "INSERT INTO INSCRIPCION (
