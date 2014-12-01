@@ -38,7 +38,7 @@ $sql="select
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="pantallaIndexStaff.php" class="navbar-brand">Tec Deportes</a>
+      <a class="navbar-brand">Tec Deportes</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       

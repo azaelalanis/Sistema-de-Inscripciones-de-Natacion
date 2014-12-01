@@ -19,6 +19,7 @@ $sql="select
         EdadMinima,
         AlumnosInscritos,
         DiasDeLaSemana,
+		HoraInicio,
         CanMaestros,
         Precio
       from
@@ -33,11 +34,27 @@ $sql="select
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Reporte</title>
+  <title>Registrar alumnos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css" media="screen">
-  <link rel="stylesheet" href="../assets/css/bootswatch.min.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script>
+		$(document).ready(function(){
+			  $('.tags').mouseover(function(){
+				var x = this.id;
+				  $.ajax({
+				  url: 'difCupo.php',
+				  data: ({'id': x}),
+				  success: function(data) {
+					document.getElementById("c"+x).innerHTML = data;
+				  }
+			  });
+			});
+		  });
 
+  </script>
+</head>
+<body>
   <!-- Este div container es para la navigation bar de arriba -->
   <div class="navbar navbar-default">
     <div class="navbar-header">
@@ -68,12 +85,13 @@ $sql="select
         <tr>
           <th>#</th>
           <th>Curso</th>
-          <th>Cupo</th>
-          <th>Cupo Actual</th>
           <th>Num. Maestros</th>
           <th>Edad M&iacute;nima</th>
           <th>D&iacute;as de la semana</th>
+			<th>Hora de inicio</th>
           <th>Precio</th>
+			<th>Cupo</th>
+			<th>Cupo Actual</th>
           <th>Inscribir a curso</th>
         </tr>
       </thead>
@@ -91,16 +109,18 @@ $sql="select
           $EdadMinima = $row['EdadMinima'];
           $DiasDeLaSemana = $row['DiasDeLaSemana'];
           $Precio = $row['Precio'];
+	  $HoraInicio= $row['HoraInicio'];
 
-          echo "  <tr>
+      echo "  <tr class='tags' id=$idCurso>
           <td>$idCurso</td>
           <td>$Nombre</td>
-          <td>$Cupo</td>
-          <td>$CupoActual</td>
           <td>$NumMaestros</td>
           <td>$EdadMinima</td>
           <td>$DiasDeLaSemana</td>
+			<td>$HoraInicio</td>
           <td>$Precio</td>
+			<td>$Cupo</td>
+            <td id=c$idCurso> $CupoActual</td>
           <form action='inscripcionAlumno.php' method='POST'>
           <input type='hidden' name='idCurso' value='$idCurso'/>
           <input type='hidden' name='idAlumno' value='$idAlumno'/>
@@ -120,9 +140,5 @@ $sql="select
       <p>&copy; ITESM 2014</p>
     </footer>
   </div>
-
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/bootswatch.js"></script>
 </body>
 </html>
