@@ -4,8 +4,8 @@ include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
 
-$idCurso= isset($_GET["idCurso"]) ? $_GET['idCurso'] : -1;
-$idAlumno= isset($_GET["idAlumno"]) ? $_GET['idAlumno'] : -1;
+$idCurso= isset($_POST["idCurso"]) ? $_POST['idCurso'] : -1;
+$idAlumno= isset($_POST["idAlumno"]) ? $_POST['idAlumno'] : -1;
 
 if($idCurso!= -1){
   $lock=0;
@@ -23,9 +23,11 @@ if($idCurso!= -1){
   $result = mysql_query($sql);
   $sql="Select release_LOCK('CURSO-". $idCurso . "')" ;
   $result = mysql_query($sql);
+  $sql="DELETE FROM inscripcion WHERE idAlumno=$idAlumno and idCurso=$idCurso";
+  $result = mysql_query($sql);
 }
 echo "<script language='javascript'>
-          window.location.href = 'pantallaRegistrarCurso.php?idAlumno=$idAlumno'
+          window.location.href = 'pantallaDetallePago.php?idAlumno=$idAlumno'
         </script>";
 
 ?>

@@ -38,7 +38,7 @@ include "./includes/sesionAdmin.php";
   <div class="container">
     <div class="jumbotron">
       <h1>Bienvenido</h1>
-      <p>Usted a ingresado al sistema como administrador.</p>
+      <p>Dar click en el CURP para consultar todos los cursos del alumno</p>
     </div>
 
     <!-- Este div container es para las opciones de bienvenida que tiene el adminsitrador -->
@@ -54,6 +54,10 @@ include "./includes/sesionAdmin.php";
       <a href="pantallaAltasBajasCambiosStaff.php" class="list-group-item">
         <h4 class="list-group-item-heading">Staff</h4>
         <p class="list-group-item-text">Aquí puede encontrar la lista de Staff del departamento.</p>
+      </a>
+      <a href="pantallaPagos.php" class="list-group-item">
+        <h4 class="list-group-item-heading">Pagos</h4>
+        <p class="list-group-item-text">Consultar pagos</p>
       </a>
     </div>
 
