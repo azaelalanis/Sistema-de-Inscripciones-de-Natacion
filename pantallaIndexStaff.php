@@ -88,7 +88,6 @@ $result = mysql_query($sql);
 					<th>Tel&eacute;fono</th>
 					<th>Correo Electr&oacute;nico</th>
 					<th>Inscribir a curso</th>
-					<th>Dar de baja</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -110,7 +109,6 @@ $result = mysql_query($sql);
 					<td>$Telefono</td>
 					<td>$email</td>
 					<td><a href='pantallaRegistrarCurso.php?idAlumno=$idAlumno&bloque=1' class='btn btn-primary btn-xs'>Inscribir a curso</a></td>
-					<td><a onclick=\"valida('$CURP')\" class='btn btn-primary btn-xs'>Baja</a></td>
 					</tr>";
 				}
 				?>

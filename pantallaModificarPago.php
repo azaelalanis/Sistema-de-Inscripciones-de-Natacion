@@ -17,8 +17,15 @@
 */
 
 	include "./includes/conexion.php";
-	include "./includes/sesionStaff.php";
 
+		session_start();
+
+	if(!isset($_SESSION['nomina'])){
+		echo "<script language=\"javascript\">
+					alert(\"Inicie sesion primero\");
+					window.location.href = \"index.html\"
+				</script>";
+	}
 $idCurso= isset($_GET["idCurso"]) ? $_GET['idCurso'] : -1;
 $idAlumno= isset($_GET["idAlumno"]) ? $_GET['idAlumno'] : -1;
 

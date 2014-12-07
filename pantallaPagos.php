@@ -51,7 +51,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css" media="screen">
   <link rel="stylesheet" href="../assets/css/bootswatch.min.css">
-
+</head>
+<body>
   <!-- Este div container es para la navigation bar de arriba -->
   <div class="navbar navbar-default">
     <div class="navbar-header">
@@ -60,7 +61,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand">Tec Deportes</a>
+<?php
+	if($_SESSION['tipo']){
+		echo "<a href=\"pantallaMenuStaff.php\" class=\"navbar-brand\">Tec Deportes</a>";
+	} else{
+		echo "<a href=\"pantallaIndexAdmin.php\" class=\"navbar-brand\">Tec Deportes</a>";
+	}
+?>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
