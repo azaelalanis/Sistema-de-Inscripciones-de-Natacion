@@ -15,7 +15,7 @@
 * @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
 */
 
-$conexion = mysql_connect('localhost', 'root', 'root');
+$conexion = mysql_connect('localhost', 'root', '');
 mysql_set_charset('utf8', $conexion);
 if (!$conexion) {
 	die('No pudo conectarse: ' . mysql_error());

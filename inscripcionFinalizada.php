@@ -29,10 +29,17 @@ $nomina = isset($_SESSION["nomina"]) ? $_SESSION['nomina']: "";
 
 
 if($idCurso != -1){
-	$sql= "INSERT INTO INSCRIPCION (
-		IDALUMNO, IDCURSO, NOMINAUSUARIO, FORMAPAGO, FECHADEINSCRIPCION, PAGADA)
-		VALUES (
-			$idAlumno, $idCurso, '$nomina', $formaDePago, NOW(), FALSE)";
+	if($formaDePago){
+		$sql= "INSERT INTO INSCRIPCION (
+			IDALUMNO, IDCURSO, NOMINAUSUARIO, FORMAPAGO, FECHADEINSCRIPCION, PAGADA)
+			VALUES (
+				$idAlumno, $idCurso, '$nomina', $formaDePago, NOW(), TRUE)";
+	}else{
+		$sql= "INSERT INTO INSCRIPCION (
+			IDALUMNO, IDCURSO, NOMINAUSUARIO, FORMAPAGO, FECHADEINSCRIPCION, PAGADA)
+			VALUES (
+				$idAlumno, $idCurso, '$nomina', $formaDePago, NOW(), FALSE)";
+	}
 			$result = mysql_query($sql);
 
 			require_once('PHPMailer/class.phpmailer.php');
