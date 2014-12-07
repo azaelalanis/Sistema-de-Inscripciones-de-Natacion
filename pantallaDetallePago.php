@@ -39,7 +39,7 @@ $sql="select
       from
         inscripcion i inner join curso c
                             on i.idCurso = c.idCurso
-       WHERE idAlumno=$idAlumno ";
+       WHERE idAlumno=$idAlumno and FormaPago=0 ";
 
   $result = mysql_query($sql);
 
