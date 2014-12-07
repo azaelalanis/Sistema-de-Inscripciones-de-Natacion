@@ -62,7 +62,7 @@ include "./includes/sesionAdmin.php";
   <div class="container">
     <div class="jumbotron">
       <h1>Bienvenido</h1>
-      <p>Dar click en el CURP para consultar todos los cursos del alumno</p>
+      <p>Usted a ingresado al sistema como administrador.</p>
     </div>
 
     <!-- Este div container es para las opciones de bienvenida que tiene el adminsitrador -->
