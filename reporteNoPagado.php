@@ -13,7 +13,7 @@ $headings = array('Nombre del Alumno', 'Nombre del curso', 'CURP', 'Fecha de Nac
 if ($result = mysql_query($query) or die(mysql_error())) {
   // Create a new PHPExcel object
   $objPHPExcel = new PHPExcel();
-  $objPHPExcel->getActiveSheet()->setTitle('Lista de alumnos que no han pagado');
+  $objPHPExcel->getActiveSheet()->setTitle('Lista de alumnos que ya pagaron');
 
   $rowNumber = 1;
   $col = 'A';

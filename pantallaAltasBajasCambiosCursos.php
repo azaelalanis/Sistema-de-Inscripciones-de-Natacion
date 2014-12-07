@@ -27,6 +27,13 @@ include "./includes/sesionAdmin.php";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="../assets/css/bootswatch.min.css">
+	<script>
+		function valida(idCurso){
+			if (confirm("¿Esta seguro?") == true) {
+				window.location.href = "bajaCurso.php?id="+idCurso;
+			} 
+		}
+	</script>
 	</head>
     <body>
 	<!-- Este div container es para la navigation bar de arriba -->
@@ -88,8 +95,8 @@ include "./includes/sesionAdmin.php";
 					<td>$EdadMinima</td>
 					<td>$EdadMaxima</td>
 					<td>$DiasDeLaSemana</td>
-          <td>$Precio</td>
-					<td><a href=\"bajaCurso.php?id=$idCurso\" class=\"btn btn-primary btn-xs\">Baja</a></td>
+					<td>$Precio</td>
+					<td><a onclick=\"valida($idCurso)\" class=\"btn btn-primary btn-xs\">Baja</a></td>
 				</tr>";
 		}	
 	?>

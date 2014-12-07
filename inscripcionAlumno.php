@@ -26,7 +26,7 @@
 	      $result = mysql_query($sql);
 	      echo "<script language=\"javascript\">
 	          alert(\"Cupo del curso lleno\");
-	          window.location.href ='pantallaRegistrarCurso.php?idAlumno=$idAlumno'
+	          window.location.href ='pantallaRegistrarCurso.php?idAlumno=$idAlumno&bloque=1'
 	        </script>";
 	  }
 	  $sql="Select release_LOCK('CURSO-". $idCurso . "')" ;
