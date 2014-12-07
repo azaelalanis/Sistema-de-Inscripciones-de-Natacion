@@ -5,11 +5,7 @@ Proyecto final de la clase de Administración de Proyectos de Ingeniería de Sof
 Sistema de Inscripciones para clases de natación en el Instituto Tecnologico y de Estudios Superiores de Monterrey, Campus Monterrey.
 
 Proyecto elaborado por:
-Azael Alberto Alanis Garza - A01175470 
-Roberto Carlos Rivera Martínez - A00618181 
-Héctor Palomares González - A01089860 
-Andrés Gerardo Cavazos Hernández - A01195067 
-Eugenio José Martínez Ramos - A01190935
+Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>, Roberto Carlos Rivera Martínez <robert_rivmtz@hotmail.com>, Héctor Palomares González <hpalomares@itesm.mx>, Andrés Gerardo Cavazos Hernández <andrscvz@gmail.com> y Eugenio José Martínez Ramos <eugeniomartinez92@gmail.com>
 
 The MIT License (MIT):
 ====================================
