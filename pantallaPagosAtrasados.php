@@ -1,8 +1,13 @@
 
 <?php
-include "./includes/conexion.php";
-include "./includes/sesionStaff.php";
-
+	include "./includes/conexion.php";
+	session_start();
+	if(!isset($_SESSION['nomina'])){
+		echo "<script language=\"javascript\">
+					alert(\"Inicie sesion primero\");
+					window.location.href = \"index.html\"
+				</script>";
+	}
 $sql="select 
         c.Nombre,
         i.idCurso,
