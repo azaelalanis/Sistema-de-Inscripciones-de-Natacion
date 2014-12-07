@@ -29,13 +29,16 @@ $sql="select
         c.Nombre,
         i.idCurso,
         PAGADA,
-        idAlumno,
+		a.Nombre as NombreAlumno,
+        a.idAlumno,
         NOMINAUSUARIO,
         FORMAPAGO,
         FECHADEINSCRIPCION
       from
         inscripcion i inner join curso c
                             on i.idCurso = c.idCurso
+					  inner join alumno a
+							on a.IdAlumno = i.IdAlumno
        WHERE NOW()-FECHADEINSCRIPCION>=86400 and PAGADA=0 ";
 
   $result = mysql_query($sql);
@@ -79,6 +82,7 @@ $sql="select
       <thead>
         <tr>
           <th>Folio Alumno </th>
+		  <th>Nombre Alumno </th>
           <th>Curso</th>
           <th>Fecha de Inscripcion</th>
 		      <th>Forma de Pago</th>
@@ -99,9 +103,11 @@ $sql="select
           $nominaUsuario = $row['NOMINAUSUARIO'];
           $formaPago = $row['FORMAPAGO'];
           $fechaInscripcion = $row['FECHADEINSCRIPCION'];
+		  $nombreAlumno = $row['NombreAlumno'];
 
       echo "  <tr>
             <td>$idAlumno</td>
+			<td>$nombreAlumno</td>
             <td><a href='pantallaModificarPago.php?idAlumno=$idAlumno&idCurso=$idCurso'>$nombreCurso</a></td>
             <td>$fechaInscripcion</td>";
             if($formaPago){
