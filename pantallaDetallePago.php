@@ -1,7 +1,14 @@
 
 <?php
 include "./includes/conexion.php";
-include "./includes/sesionStaff.php";
+	session_start();
+	
+	if(!isset($_SESSION['nomina'])){
+		echo "<script language=\"javascript\">
+					alert(\"Inicie sesion primero\");
+					window.location.href = \"index.html\"
+				</script>";
+	}
 
 $idAlumno= isset($_GET["idAlumno"]) ? $_GET['idAlumno'] : -1;
 
@@ -28,8 +35,13 @@ $sql="select
   <title>Reporte</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css" media="screen">
-  <link rel="stylesheet" href="../assets/css/bootswatch.min.css">
-
+  <script>
+		function valida(idCurso){
+			return confirm("¿Esta seguro?");
+		}
+	</script>
+</head>
+<body>
   <!-- Este div container es para la navigation bar de arriba -->
   <div class="navbar navbar-default">
     <div class="navbar-header">
@@ -38,7 +50,7 @@ $sql="select
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand">Tec Deportes</a>
+      <a href="pantallaPagos.php" class="navbar-brand">Tec Deportes</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       
@@ -90,7 +102,7 @@ $sql="select
            echo "<td>No</td>"; 
           }
       echo "
-            <form action='cancelarInscripcion.php' method='POST'> 
+            <form action='cancelarInscripcion.php' method='POST' onsubmit='return valida()'> 
               <input type='hidden' name='idCurso' value='$idCurso'/>
               <input type='hidden' name='idAlumno' value='$idAlumno'/>
               <td><input type='submit' class='btn btn-primary btn-xs' value='Dar de baja'></td>
@@ -112,6 +124,5 @@ $sql="select
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootswatch.js"></script>
   </body>
   </html>
