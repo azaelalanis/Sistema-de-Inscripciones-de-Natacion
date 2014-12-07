@@ -40,11 +40,11 @@
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
-        <form class="navbar-form navbar-left" action="pantallaIndexStaff.php" method="POST">
+        <form class="navbar-form navbar-left" action="pantallaPagos.php" method="POST">
           <input type="text" name="buscar" class="form-control col-lg-8" placeholder="Busqueda">
 		  <input type="submit" class="form-control col-lg-8">
         </form>
-        <li><a href="pantallaRegistroAlumno.php">Agregar nuevo alumno</a></li>
+        
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -60,6 +60,7 @@
 		</div>
 
   <div class="container">
+<a class="btn btn-default" href="pantallaPagosAtrasados.php" role="button">Consultar pagos atrasados</a>
 
     <table class="table table-striped table-hover ">
       <thead>
@@ -96,7 +97,6 @@
 
         </tbody>
       </table>
-
 
       <hr>
       <footer>
