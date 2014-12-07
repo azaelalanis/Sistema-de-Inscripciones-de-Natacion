@@ -1,15 +1,32 @@
 <?php
+
+/**
+* Este archivo es la pantalla de inicio del staff.
+*
+* @category   Proyecto
+* @package    Sistema de Inscripciones de Natacion
+* @author     Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>
+* @author     Andres Gerardo Cavazos Hernandez <andrscvz@gmail.com>
+* @author			Eugenio Jose Martinez Ramos <eugeniomartinez92@gmail.com>
+* @author			Roberto Carlos Rivera Martinez <robert_rivmtz@hotmail.com>
+* @author			Hector Palomares Gonzalez <hpalomares@itesm.mx>
+* @copyright  2014
+* @license    The MIT License
+* @version    1.0
+* @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
+*/
+
 include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
 $sql="select
-				idAlumno,
-				CURP,
-				Nombre,
-				Telefono,
-				email
-				from
-				alumno";
+idAlumno,
+CURP,
+Nombre,
+Telefono,
+email
+from
+alumno";
 
 if(isset($_POST["buscar"])){
 	$buscar = $_POST["buscar"];
@@ -27,11 +44,11 @@ $result = mysql_query($sql);
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css" media="screen">
 	<script>
-		function valida(curp){
-			if (confirm("¿Esta seguro?") == true) {
-				window.location.href = "bajaAlumno.php?curp="+curp;
-			} 
+	function valida(curp){
+		if (confirm("¿Esta seguro?") == true) {
+			window.location.href = "bajaAlumno.php?curp="+curp;
 		}
+	}
 	</script>
 </head>
 <body>

@@ -1,5 +1,22 @@
 
 <?php
+
+/**
+* Este archivo es la pantalla de menu de un staff.
+*
+* @category   Proyecto
+* @package    Sistema de Inscripciones de Natacion
+* @author     Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>
+* @author     Andres Gerardo Cavazos Hernandez <andrscvz@gmail.com>
+* @author			Eugenio Jose Martinez Ramos <eugeniomartinez92@gmail.com>
+* @author			Roberto Carlos Rivera Martinez <robert_rivmtz@hotmail.com>
+* @author			Hector Palomares Gonzalez <hpalomares@itesm.mx>
+* @copyright  2014
+* @license    The MIT License
+* @version    1.0
+* @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
+*/
+
 include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
@@ -15,7 +32,7 @@ include "./includes/sesionStaff.php";
 </head>
 <body>
   <!-- Este div container es para la navigation bar de arriba -->
-  
+
   <div class="navbar navbar-default">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -37,9 +54,9 @@ include "./includes/sesionStaff.php";
   <!-- Este div container es para el jumbotron de bienvenida -->
   <div class="container">
     <div class="jumbotron">
-		<h1>Bienvenido</h1>
-		<p>Usted a ingresado al sistema como staff.</p>
-	</div>
+      <h1>Bienvenido</h1>
+      <p>Usted a ingresado al sistema como staff.</p>
+    </div>
 
     <!-- Este div container es para las opciones de bienvenida que tiene el adminsitrador -->
     <div class="list-group">

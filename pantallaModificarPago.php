@@ -1,11 +1,28 @@
 <?php
+
+/**
+* Este archivo es la pantalla de modificar pago para un curso de un alumno en particular.
+*
+* @category   Proyecto
+* @package    Sistema de Inscripciones de Natacion
+* @author     Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>
+* @author     Andres Gerardo Cavazos Hernandez <andrscvz@gmail.com>
+* @author			Eugenio Jose Martinez Ramos <eugeniomartinez92@gmail.com>
+* @author			Roberto Carlos Rivera Martinez <robert_rivmtz@hotmail.com>
+* @author			Hector Palomares Gonzalez <hpalomares@itesm.mx>
+* @copyright  2014
+* @license    The MIT License
+* @version    1.0
+* @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
+*/
+
 	include "./includes/conexion.php";
 	include "./includes/sesionStaff.php";
-	
+
 $idCurso= isset($_GET["idCurso"]) ? $_GET['idCurso'] : -1;
 $idAlumno= isset($_GET["idAlumno"]) ? $_GET['idAlumno'] : -1;
-	
-$sql="select 
+
+$sql="select
         c.Nombre,
         PAGADA
       from
@@ -38,7 +55,7 @@ $sql="select
       <a class="navbar-brand">Tec Deportes</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
-      
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="cerrarSesion.php">Cerrar sesión</a></li>
       </ul>
@@ -67,7 +84,7 @@ $sql="select
         <div class="radio">
           <label>
             <input type="radio" name="pagada" id="pagadaNo" name="pagada" value="False" <?php if($pagada == 0) echo "checked"; ?>>
-            Pago no realizado 
+            Pago no realizado
           </label>
         </div>
       </div>

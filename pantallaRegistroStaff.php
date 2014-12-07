@@ -1,6 +1,23 @@
 <!DOCTYPE html>
-<?php 
-	require_once("includes/conexion.php"); 
+<?php
+
+/**
+* Este archivo es la pantalla donde el adminstrador registra un nuevo miembro del staff.
+*
+* @category   Proyecto
+* @package    Sistema de Inscripciones de Natacion
+* @author     Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>
+* @author     Andres Gerardo Cavazos Hernandez <andrscvz@gmail.com>
+* @author			Eugenio Jose Martinez Ramos <eugeniomartinez92@gmail.com>
+* @author			Roberto Carlos Rivera Martinez <robert_rivmtz@hotmail.com>
+* @author			Hector Palomares Gonzalez <hpalomares@itesm.mx>
+* @copyright  2014
+* @license    The MIT License
+* @version    1.0
+* @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
+*/
+
+	require_once("includes/conexion.php");
 	require_once("includes/registrarUsuario.php");
 	include "./includes/sesionAdmin.php";
 ?>
@@ -19,7 +36,7 @@
     <script>
             $(function(){
                 $('#nombreEmpleado').alpha();
-                $('#nominaEmpleado').alphanum(); 
+                $('#nominaEmpleado').alphanum();
                 $('#formReg').validate({
                     rules:{
                         'nominaEmpleado': {
@@ -33,10 +50,10 @@
                         },
                         'contraseña':  {required: true, minlength: 8},
                         'nombreEmpleado': {required: true, minlength: 3}
-                       
+
                     },
                     messages: {
-                        'nominaEmpleado': { required: 'Debe ingresar nomina', 
+                        'nominaEmpleado': { required: 'Debe ingresar nomina',
                                             remote: 'Nomina ya registrada'
                                  },
                         'nombreEmpleado': { required: 'Debe ingresar su nombre', minlength: 'Minimo 3 Caracteres'},
@@ -72,7 +89,7 @@
 
   	<!-- Titulo de la forma -->
   	<h1 align="center">Registro de staff nuevo</h1>
-  	<p class="lead" align="center">Ingrese la información necesaria en los campos de esta forma para registrar staff nuevo al sistema.</p>	
+  	<p class="lead" align="center">Ingrese la información necesaria en los campos de esta forma para registrar staff nuevo al sistema.</p>
 
   	<!-- Codigo de la forma -->
   	<div class="container">
@@ -109,7 +126,7 @@
             <input type="radio" name="privilegio" id="1" value="1" checked>
             Staff
           </label>
-        </div>  
+        </div>
         <div class="radio">
           <label>
             <input type="radio" name="privilegio" id="0" value="0">

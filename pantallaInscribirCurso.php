@@ -1,4 +1,21 @@
 <?php
+
+/**
+* Este archivo es la pantalla de dar de alta un curso.
+*
+* @category   Proyecto
+* @package    Sistema de Inscripciones de Natacion
+* @author     Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>
+* @author     Andres Gerardo Cavazos Hernandez <andrscvz@gmail.com>
+* @author			Eugenio Jose Martinez Ramos <eugeniomartinez92@gmail.com>
+* @author			Roberto Carlos Rivera Martinez <robert_rivmtz@hotmail.com>
+* @author			Hector Palomares Gonzalez <hpalomares@itesm.mx>
+* @copyright  2014
+* @license    The MIT License
+* @version    1.0
+* @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
+*/
+
 include "./includes/conexion.php";
 include "./includes/sesionStaff.php";
 
@@ -35,7 +52,7 @@ include "./includes/sesionStaff.php";
     <div class="container">
       <!-- Titulo de la forma -->
       <h1 align="center">Inscibir alumno</h1>
-      <p class="lead" align="center">Seleccione por favor el curso al que quiere inscribir al alumno.</p> 
+      <p class="lead" align="center">Seleccione por favor el curso al que quiere inscribir al alumno.</p>
 
       <div class="form-group">
       <label for="categoria" class="col-lg-2 control-label">Categoría</label>

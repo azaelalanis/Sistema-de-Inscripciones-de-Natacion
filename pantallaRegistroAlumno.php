@@ -1,4 +1,21 @@
 <?php
+
+/**
+* Este archivo es la pantalla de registro de un alumno.
+*
+* @category   Proyecto
+* @package    Sistema de Inscripciones de Natacion
+* @author     Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>
+* @author     Andres Gerardo Cavazos Hernandez <andrscvz@gmail.com>
+* @author			Eugenio Jose Martinez Ramos <eugeniomartinez92@gmail.com>
+* @author			Roberto Carlos Rivera Martinez <robert_rivmtz@hotmail.com>
+* @author			Hector Palomares Gonzalez <hpalomares@itesm.mx>
+* @copyright  2014
+* @license    The MIT License
+* @version    1.0
+* @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
+*/
+
 	include "./includes/conexion.php";
 	include "./includes/sesionStaff.php";
 ?>
@@ -16,8 +33,8 @@
     <script>
             $(function(){
                 $('#nombreCompleto').alpha();
-                $('#curp').alphanum(); 
-                $('#nombrePadre').alpha(); 
+                $('#curp').alphanum();
+                $('#nombrePadre').alpha();
                 $('#nominaEmpleado').alphanum();
                 $('#telefono').numeric();
                 $('#formReg').validate({
@@ -71,7 +88,7 @@
   	</div>
   	<!-- Titulo de la forma -->
   	<h1 align="center">Datos alumno</h1>
-  	<p class="lead" align="center">Ingrese la información necesaria en los campos de esta forma para registrar al alumno en la base de datos.</p>	
+  	<p class="lead" align="center">Ingrese la información necesaria en los campos de esta forma para registrar al alumno en la base de datos.</p>
 
 
   	<!-- Codigo de la forma -->

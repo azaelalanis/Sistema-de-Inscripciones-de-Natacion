@@ -1,9 +1,26 @@
 <?php
+
+/**
+* Este archivo es la pantalla donde se enlistan los miembros del staff y te permite dar de alta, baja o cambiar un staff en particular.
+*
+* @category   Proyecto
+* @package    Sistema de Inscripciones de Natacion
+* @author     Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>
+* @author     Andres Gerardo Cavazos Hernandez <andrscvz@gmail.com>
+* @author			Eugenio Jose Martinez Ramos <eugeniomartinez92@gmail.com>
+* @author			Roberto Carlos Rivera Martinez <robert_rivmtz@hotmail.com>
+* @author			Hector Palomares Gonzalez <hpalomares@itesm.mx>
+* @copyright  2014
+* @license    The MIT License
+* @version    1.0
+* @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
+*/
+
 include "./includes/conexion.php";
 include "./includes/sesionAdmin.php";
 
 
-	$sql="select 
+	$sql="select
 				Nomina,
 				Nombre
 			from
@@ -25,7 +42,7 @@ include "./includes/sesionAdmin.php";
 		function valida(Nomina){
 			if (confirm("¿Esta seguro?") == true) {
 				window.location.href = "bajaStaff.php?nomina="+Nomina;
-			} 
+			}
 		}
 	</script>
 </head>
@@ -53,7 +70,7 @@ include "./includes/sesionAdmin.php";
   <div class="container">
     <!-- Titulo de la forma -->
     <h1 align="center">Staff</h1>
-    <p class="lead" align="center">Aqui se despliegan los miembros del Staff y da la opción de dar de baja a cualquiera de ellos.</p> 
+    <p class="lead" align="center">Aqui se despliegan los miembros del Staff y da la opción de dar de baja a cualquiera de ellos.</p>
 
     <table class="table table-striped table-hover ">
       <thead>
@@ -65,7 +82,7 @@ include "./includes/sesionAdmin.php";
       </thead>
       <tbody>
 	  <?php
-	
+
 		while($row = mysql_fetch_array($result)){
 			$Nomina = $row['Nomina'];
 			$Nombre = $row['Nombre'];
@@ -74,7 +91,7 @@ include "./includes/sesionAdmin.php";
 						<td>$Nombre</td>
 						<td><a onclick=\"valida('$Nomina')\" class='btn btn-primary btn-xs'>Baja</a></td>
 					</tr>";
-		}	
+		}
 	?>
       </tbody>
     </table>

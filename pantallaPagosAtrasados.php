@@ -1,5 +1,22 @@
 
 <?php
+
+/**
+* Este archivo es la pantalla donde se muestran los alumnos con pagos atrasados.
+*
+* @category   Proyecto
+* @package    Sistema de Inscripciones de Natacion
+* @author     Azael Alberto Alanis Garza <azaelalanis.g@gmail.com>
+* @author     Andres Gerardo Cavazos Hernandez <andrscvz@gmail.com>
+* @author			Eugenio Jose Martinez Ramos <eugeniomartinez92@gmail.com>
+* @author			Roberto Carlos Rivera Martinez <robert_rivmtz@hotmail.com>
+* @author			Hector Palomares Gonzalez <hpalomares@itesm.mx>
+* @copyright  2014
+* @license    The MIT License
+* @version    1.0
+* @link       https://github.com/azaelalanis/Sistema-de-Inscripciones-de-Natacion.git
+*/
+
 	include "./includes/conexion.php";
 	session_start();
 	if(!isset($_SESSION['nomina'])){
@@ -8,7 +25,7 @@
 					window.location.href = \"index.html\"
 				</script>";
 	}
-$sql="select 
+$sql="select
         c.Nombre,
         i.idCurso,
         PAGADA,
@@ -45,7 +62,7 @@ $sql="select
       <a href="pantallaPagos.php" class="navbar-brand">Tec Deportes</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
-      
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="cerrarSesion.php">Cerrar sesión</a></li>
       </ul>
@@ -68,7 +85,7 @@ $sql="select
       <tbody>
 
         <?php
-  
+
     while($row = mysql_fetch_array($result)){
           $nombreCurso= $row['Nombre'];
           $pagada= $row['PAGADA'];
@@ -83,10 +100,10 @@ $sql="select
             <td><a href='pantallaModificarPago.php?idAlumno=$idAlumno&idCurso=$idCurso'>$nombreCurso</a></td>
             <td>$fechaInscripcion</td>";
             if($formaPago){
-            echo "<td>Nomina</td>";  
+            echo "<td>Nomina</td>";
             }
             else{
-             echo "<td>Deposito</td>";   
+             echo "<td>Deposito</td>";
             }
 
       echo "<td>$nominaUsuario</td>";
@@ -94,19 +111,19 @@ $sql="select
            echo "<td>Si</td>";
           }
           else{
-           echo "<td>No</td>"; 
+           echo "<td>No</td>";
           }
       echo "
-            <form action='cancelarInscripcionAtrasados.php' method='POST'> 
+            <form action='cancelarInscripcionAtrasados.php' method='POST'>
               <input type='hidden' name='idCurso' value='$idCurso'/>
               <input type='hidden' name='idAlumno' value='$idAlumno'/>
               <td><input type='submit' class='btn btn-primary btn-xs' value='Dar de baja'></td>
             </form>
           </tr>";
-    } 
+    }
   ?>
 
-      
+
     </tbody>
   </table>
 
