@@ -12,6 +12,13 @@ include "./includes/sesionAdmin.php";
   <title>Administración</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+  <script>
+		function valida(){
+			if (confirm("¿Esta seguro? si acepta se borraran todas las inscripciones a cursos como tambien los pagos (no se borran cursos, usuarios ni alumnos)") == true) {
+				window.location.href = "borrarBaseDatos.php";
+			} 
+		}
+	</script>
 </head>
 <body>
   <!-- Este div container es para la navigation bar de arriba -->
@@ -58,6 +65,10 @@ include "./includes/sesionAdmin.php";
       <a href="pantallaPagos.php" class="list-group-item">
         <h4 class="list-group-item-heading">Pagos</h4>
         <p class="list-group-item-text">Consultar pagos</p>
+      </a>
+	   <a onclick="valida()" class="list-group-item">
+        <h4 class="list-group-item-heading">Borrar Base de Datos</h4>
+        <p class="list-group-item-text">Aquí puede borrar la relación de los alumnos con sus cursos.</p>
       </a>
     </div>
 

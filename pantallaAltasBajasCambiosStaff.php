@@ -21,8 +21,15 @@ include "./includes/sesionAdmin.php";
   <title>Reporte</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css" media="screen">
-  <link rel="stylesheet" href="../assets/css/bootswatch.min.css">
-
+  <script>
+		function valida(Nomina){
+			if (confirm("¿Esta seguro?") == true) {
+				window.location.href = "bajaStaff.php?nomina="+Nomina;
+			} 
+		}
+	</script>
+</head>
+<body>
   <!-- Este div container es para la navigation bar de arriba -->
   <div class="navbar navbar-default">
     <div class="navbar-header">
@@ -65,7 +72,7 @@ include "./includes/sesionAdmin.php";
 			echo "	<tr>
 						<td><a href='pantallaModificaStaff.php?nomina=$Nomina'>$Nomina</a></td>
 						<td>$Nombre</td>
-						<td><a href='bajaStaff.php?nomina=$Nomina' class='btn btn-primary btn-xs'>Baja</a></td>
+						<td><a onclick=\"valida('$Nomina')\" class='btn btn-primary btn-xs'>Baja</a></td>
 					</tr>";
 		}	
 	?>
@@ -79,7 +86,6 @@ include "./includes/sesionAdmin.php";
   </div>
 
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   <script src="js/bootswatch.js"></script>
 </body>
 </html>

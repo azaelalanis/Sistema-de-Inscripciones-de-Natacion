@@ -225,7 +225,7 @@
     <div class="form-group">
       <label for="precioCurso" class="col-lg-2 control-label">Precio del curso</label>
       <div class="col-lg-10">
-        <input type="text" min="0.00" step="50.00" max="2500" class="form-control" id="precioCurso" name = "precioCurso" placeholder="$">
+        <input type="text" min="0.00" max="10000" class="form-control" id="precioCurso" name = "precioCurso" placeholder="$">
       </div>
     </div>
 
