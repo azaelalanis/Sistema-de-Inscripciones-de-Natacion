@@ -21,17 +21,17 @@ include "./includes/conexion.php";
 include "./includes/sesionAdmin.php";
 
 
-$sql="select
-idCurso,
-Nombre,
-Cupo,
-CanMaestros,
-DiasDeLaSemana,
-EdadMinima,
-EdadMaxima,
-Precio
-from
-curso";
+$sql="	select
+			idCurso,
+			Nombre,
+			Cupo,
+			CanMaestros,
+			DiasDeLaSemana,
+			EdadMinima,
+			EdadMaxima,
+			Precio
+		from
+			curso";
 
 $result = mysql_query($sql);
 ?>
@@ -43,7 +43,6 @@ $result = mysql_query($sql);
 	<title>Reporte</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css" media="screen">
-	<link rel="stylesheet" href="../assets/css/bootswatch.min.css">
 	<script>
 	function valida(idCurso){
 		if (confirm("¿Esta seguro?") == true) {
@@ -125,9 +124,7 @@ $result = mysql_query($sql);
 			<p>&copy; ITESM 2014</p>
 		</footer>
 	</div>
-
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootswatch.js"></script>
 </body>
 </html>
