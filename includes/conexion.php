@@ -1,6 +1,4 @@
 <?php
-<<<<<<< HEAD
-
 /**
 * Este archivo se encarga de establecer la conexion con la base de datos.
 *
