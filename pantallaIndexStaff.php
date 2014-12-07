@@ -26,8 +26,15 @@ $result = mysql_query($sql);
 	<title>Reporte</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.css" media="screen">
-	<link rel="stylesheet" href="../assets/css/bootswatch.min.css">
-
+	<script>
+		function valida(curp){
+			if (confirm("¿Esta seguro?") == true) {
+				window.location.href = "bajaAlumno.php?curp="+curp;
+			} 
+		}
+	</script>
+</head>
+<body>
 	<!-- Este div container es para la navigation bar de arriba -->
 	<div class="navbar navbar-default">
 		<div class="navbar-header">
@@ -86,7 +93,7 @@ $result = mysql_query($sql);
 					<td>$Telefono</td>
 					<td>$email</td>
 					<td><a href='pantallaRegistrarCurso.php?idAlumno=$idAlumno&bloque=1' class='btn btn-primary btn-xs'>Inscribir a curso</a></td>
-					<td><a href='bajaAlumno.php?curp=$CURP' class='btn btn-primary btn-xs'>Baja</a></td>
+					<td><a onclick=\"valida('$CURP')\" class='btn btn-primary btn-xs'>Baja</a></td>
 					</tr>";
 				}
 				?>
