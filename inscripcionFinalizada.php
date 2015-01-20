@@ -30,17 +30,12 @@ $nomina = isset($_SESSION["nomina"]) ? $_SESSION['nomina']: "";
 
 if($idCurso != -1){
 
-	if($formaDePago){
+
 		$sql= "INSERT INTO INSCRIPCION (
 			IDALUMNO, IDCURSO, NOMINAUSUARIO, FORMAPAGO, FECHADEINSCRIPCION, PAGADA)
 			VALUES (
-				$idAlumno, $idCurso, '$nomina', $formaDePago, NOW(), 0)";
-	}else{
-		$sql= "INSERT INTO INSCRIPCION (
-			IDALUMNO, IDCURSO, NOMINAUSUARIO, FORMAPAGO, FECHADEINSCRIPCION, PAGADA)
-			VALUES (
-				$idAlumno, $idCurso, '$nomina', $formaDePago, NOW(), 0)";
-	}
+				$idAlumno, $idCurso, '$nomina', $formaDePago, NOW(), $formaDePago)";
+	
 
 			$result = mysql_query($sql);
 
